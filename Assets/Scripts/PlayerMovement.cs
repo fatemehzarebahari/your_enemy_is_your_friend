@@ -61,10 +61,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Move(){
         rb.velocity = moveDirection * moveSpeed * Time.deltaTime * 10; 
-        if (moveDirection.x == 1) animator.SetTrigger("right");
-        else if (moveDirection.x == -1) animator.SetTrigger("left");
-        else if (moveDirection.y == 1) animator.SetTrigger("up");
-        else if (moveDirection.y == -1) animator.SetTrigger("down");;
+        if (moveDirection.x > 0) animator.SetTrigger("right");
+        else if (moveDirection.x < 0) animator.SetTrigger("left");
+        else if (moveDirection.y > 0) animator.SetTrigger("up");
+        else if (moveDirection.y < 0) animator.SetTrigger("down");;
         if (rb.velocity.magnitude > 0) animator.SetBool("IsMoving", true);
         else animator.SetBool("IsMoving", false);
     }
