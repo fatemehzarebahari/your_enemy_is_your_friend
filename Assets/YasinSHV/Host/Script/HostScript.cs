@@ -57,8 +57,14 @@ public class HostScript : MonoBehaviour
 
 
         //Attack
-        for(int i = 0; i < activeEnemies.Length; i++)
-            //Attack
+        for (int i = 0; i < activeEnemies.Length; i++)
+        {
+            int shouldAttack = Random.Range(1, 3);
+            if (shouldAttack == 3)
+            {
+                //attack
+            }
+        }
 
         if (timer > attackCoolDown)
         {
