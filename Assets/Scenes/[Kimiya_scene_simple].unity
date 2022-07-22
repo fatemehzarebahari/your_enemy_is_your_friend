@@ -135,6 +135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Grass D (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4331307297609962461, guid: fd980c817c63af4458df40a61e529e93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 9132832536761082797, guid: fd980c817c63af4458df40a61e529e93,
         type: 3}
       propertyPath: m_RootOrder
@@ -5788,7 +5793,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 112628429}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Border Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5824,6 +5829,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 794232592}
     m_Modifications:
+    - target: {fileID: 4164583253559616341, guid: 8c66149e58003104daf96668db118b4f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4526411729153331029, guid: 8c66149e58003104daf96668db118b4f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5894,6 +5904,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Grass H (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8967995859665420069, guid: 8c66149e58003104daf96668db118b4f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c66149e58003104daf96668db118b4f, type: 3}
 --- !u!4 &362580245 stripped
@@ -5909,6 +5924,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 871158785}
     m_Modifications:
+    - target: {fileID: 3644440869396892318, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410501274030225103, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727598516461245769, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7947911505737750448, guid: c5bdca1933fde624698bb8c6d6daa44b,
         type: 3}
       propertyPath: m_RootOrder
@@ -5974,6 +6004,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: 'SpawnPoint '
       objectReference: {fileID: 0}
+    - target: {fileID: 8229957891828139438, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5997224648939805555, guid: c5bdca1933fde624698bb8c6d6daa44b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c5bdca1933fde624698bb8c6d6daa44b, type: 3}
@@ -5990,6 +6025,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 871158785}
     m_Modifications:
+    - target: {fileID: 3644440869396892318, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410501274030225103, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727598516461245769, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7947911505737750448, guid: c5bdca1933fde624698bb8c6d6daa44b,
         type: 3}
       propertyPath: m_RootOrder
@@ -6054,6 +6104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: 'SpawnPoint '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229957891828139438, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5997224648939805555, guid: c5bdca1933fde624698bb8c6d6daa44b, type: 3}
@@ -6221,6 +6276,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Grass K (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 9021710266125520640, guid: 4800845c2c4caa84eb6194552ae9c841,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4800845c2c4caa84eb6194552ae9c841, type: 3}
 --- !u!4 &511455570 stripped
@@ -6306,6 +6366,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Grass K
       objectReference: {fileID: 0}
+    - target: {fileID: 9021710266125520640, guid: 4800845c2c4caa84eb6194552ae9c841,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4800845c2c4caa84eb6194552ae9c841, type: 3}
 --- !u!4 &681716243 stripped
@@ -6380,6 +6445,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Grass K (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021710266125520640, guid: 4800845c2c4caa84eb6194552ae9c841,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4800845c2c4caa84eb6194552ae9c841, type: 3}
@@ -6541,6 +6611,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Grass K (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9021710266125520640, guid: 4800845c2c4caa84eb6194552ae9c841,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4800845c2c4caa84eb6194552ae9c841, type: 3}
 --- !u!4 &776469837 stripped
@@ -6558,7 +6633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 794232592}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Plants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6606,7 +6681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 871158785}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: SpawnPoint
   m_TagString: 'SpawnPoint '
   m_Icon: {fileID: 0}
@@ -6698,6 +6773,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Grass I
       objectReference: {fileID: 0}
+    - target: {fileID: 7607938130759153975, guid: 424ccba55881d2743a04e1f1a4947e4c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 424ccba55881d2743a04e1f1a4947e4c, type: 3}
 --- !u!4 &883257627 stripped
@@ -6713,6 +6793,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 112628429}
     m_Modifications:
+    - target: {fileID: 3256064665225810532, guid: df420ddd0ffda274cba2d4807d8987bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075975974917516961, guid: df420ddd0ffda274cba2d4807d8987bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075975974933568967, guid: df420ddd0ffda274cba2d4807d8987bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 6075975974975622417, guid: df420ddd0ffda274cba2d4807d8987bd,
         type: 3}
       propertyPath: m_RootOrder
@@ -6777,6 +6872,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Props Stair R
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075975974975622418, guid: df420ddd0ffda274cba2d4807d8987bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075975975660753996, guid: df420ddd0ffda274cba2d4807d8987bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075975976084253374, guid: df420ddd0ffda274cba2d4807d8987bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df420ddd0ffda274cba2d4807d8987bd, type: 3}
@@ -7347,7 +7457,7 @@ GameObject:
   - component: {fileID: 1414126558}
   - component: {fileID: 1414126561}
   - component: {fileID: 1414126560}
-  - component: {fileID: 1414126559}
+  - component: {fileID: 1414126562}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -7370,22 +7480,6 @@ Transform:
   m_Father: {fileID: 1906515923}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!19719996 &1414126559
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414126557}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1414126560
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -7424,9 +7518,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -3
+  m_SortingLayerID: -44025399
+  m_SortingLayer: 2
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -9057,6 +9151,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1414126562
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414126557}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1001 &1494080383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9124,6 +9234,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Flower
       objectReference: {fileID: 0}
+    - target: {fileID: 8193410510875309158, guid: c6d86ec8825b7674a9736d1cb0cd98a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6d86ec8825b7674a9736d1cb0cd98a2, type: 3}
 --- !u!4 &1494080384 stripped
@@ -9143,6 +9258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Grass D
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331307297609962461, guid: fd980c817c63af4458df40a61e529e93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9132832536761082797, guid: fd980c817c63af4458df40a61e529e93,
         type: 3}
@@ -9389,6 +9509,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Grass D (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4331307297609962461, guid: fd980c817c63af4458df40a61e529e93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 9132832536761082797, guid: fd980c817c63af4458df40a61e529e93,
         type: 3}
       propertyPath: m_RootOrder
@@ -9529,6 +9654,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Grass K (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9021710266125520640, guid: 4800845c2c4caa84eb6194552ae9c841,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4800845c2c4caa84eb6194552ae9c841, type: 3}
 --- !u!4 &1704971778 stripped
@@ -9544,6 +9674,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 871158785}
     m_Modifications:
+    - target: {fileID: 3644440869396892318, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410501274030225103, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727598516461245769, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7947911505737750448, guid: c5bdca1933fde624698bb8c6d6daa44b,
         type: 3}
       propertyPath: m_RootOrder
@@ -9609,6 +9754,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: 'SpawnPoint '
       objectReference: {fileID: 0}
+    - target: {fileID: 8229957891828139438, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5997224648939805555, guid: c5bdca1933fde624698bb8c6d6daa44b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c5bdca1933fde624698bb8c6d6daa44b, type: 3}
@@ -9629,6 +9779,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Grass B
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067587326924003671, guid: 2d546d2d8b016864ab41e2185c250eb5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7509736641193634087, guid: 2d546d2d8b016864ab41e2185c250eb5,
         type: 3}
@@ -9989,6 +10144,95 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2050831071
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 143928499604399490, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.020501
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4846145
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.073684976
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232893, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232895, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232895, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232895, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
+    - target: {fileID: 233694392156232898, guid: 779328e4f37ec4047ab91cfac4fad1dd,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 779328e4f37ec4047ab91cfac4fad1dd, type: 3}
 --- !u!1001 &2058182127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10065,6 +10309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Grass H
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967995859665420069, guid: 8c66149e58003104daf96668db118b4f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c66149e58003104daf96668db118b4f, type: 3}
