@@ -1,45 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
 
 public class NPCFollower : MonoBehaviour
 {
     [SerializeField]
     Transform player, pet;
 
-    [SerializeField]
-    float delay = 0.1f;
-
-    Vector2 player_pos, pet_pos;
-    Vector2 distance;
-
-    float firstDist;
-    float dist;
+    float deltaX, deltaY, newDeltaX, newDeltaY;
+    Vector2 player_pos;
 
     void Awake()
     {
-        firstDist = (pet.localPosition - player.localPosition).magnitude;
 
+        deltaX = pet.localPosition.x - player.localPosition.x;
+        deltaY = pet.localPosition.x - player.localPosition.x;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        pet_pos = pet.localPosition;
-        player_pos = player.localPosition;
-        dist = (player_pos - pet_pos).magnitude;
-        Vector2 aim_Vector = player_pos - pet_pos;
-
-        if (dist > firstDist)
+        newDeltaX = pet.localPosition.x - player.localPosition.x;
+        newDeltaY = pet.localPosition.y - player.localPosition.y;
+        if (newDeltaX != deltaX || newDeltaY != deltaY)
         {
-            distance = player_pos - (aim_Vector / aim_Vector.magnitude) * firstDist;
-            pet.localPosition = Vector2.Lerp(pet_pos, distance, Mathf.SmoothStep(0f, 1f, delay));
-        }
-
-        if (dist < firstDist)
-        {
-            distance = (-aim_Vector / aim_Vector.magnitude) * firstDist;
-            pet.localPosition = Vector2.Lerp(pet_pos, distance, Mathf.SmoothStep(0f, 1f, delay));
+            player_pos = player.localPosition;
+            player_pos.x += deltaX;
+            player_pos.y += deltaY;
+            pet.localPosition = Vector2.Lerp(pet.localPosition, player_pos, Mathf.SmoothStep(0f, 1f, 0.4f));
         }
     }
 }
