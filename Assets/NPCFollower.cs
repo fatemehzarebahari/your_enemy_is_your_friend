@@ -1,34 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class NPCFollower : MonoBehaviour
 {
     [SerializeField]
     Transform player, pet;
 
-    float deltaX, deltaY, newDeltaX, newDeltaY;
-    Vector2 player_pos;
+    [SerializeField]
+    float delay = 0.1f;
 
-    void Awake()
-    {
+    [SerializeField]
+    float firstDist;
 
-        deltaX = pet.localPosition.x - player.localPosition.x;
-        deltaY = pet.localPosition.x - player.localPosition.x;
-    }
+    public bool isForwarding = true;
+    public bool havingSpecifiedZone = false;
+    
+
+    Vector2 player_pos, pet_pos;
+    Vector2 distance;
+    
+    float dist;
+
+    
 
     // Update is called once per frame
     void Update()
     {
-
-        newDeltaX = pet.localPosition.x - player.localPosition.x;
-        newDeltaY = pet.localPosition.y - player.localPosition.y;
-        if (newDeltaX != deltaX || newDeltaY != deltaY)
+        if (isForwarding)
         {
+            pet_pos = pet.localPosition;
             player_pos = player.localPosition;
-            player_pos.x += deltaX;
-            player_pos.y += deltaY;
-            pet.localPosition = Vector2.Lerp(pet.localPosition, player_pos, Mathf.SmoothStep(0f, 1f, 0.4f));
+            dist = (player_pos - pet_pos).magnitude;
+            Vector2 aim_Vector = player_pos - pet_pos;
+
+            if (dist > firstDist)
+            {
+                distance = player_pos - (aim_Vector / aim_Vector.magnitude) * firstDist;
+                pet.localPosition = Vector2.Lerp(pet_pos, distance, delay);
+            }
+            if (havingSpecifiedZone)
+            {
+                if (dist < firstDist)
+                {
+                    distance = (-aim_Vector / aim_Vector.magnitude) * firstDist;
+                    pet.localPosition = Vector2.Lerp(pet_pos, distance, Mathf.SmoothStep(0f, 1f, delay));
+                }
+            }
         }
     }
 }
