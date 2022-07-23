@@ -7,23 +7,24 @@ public class NPCFollower : MonoBehaviour
     Transform player, pet;
 
     [SerializeField]
-    float delay = 0.1f;
+    float speed = 3f;
 
     [SerializeField]
     float firstDist;
 
+    Rigidbody2D rb;
+
     public bool isForwarding = true;
-    public bool havingSpecifiedZone = false;
-    
 
     Vector2 player_pos, pet_pos;
-    Vector2 distance;
     
     float dist;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-    
 
-    // Update is called once per frame
     void Update()
     {
         if (isForwarding)
@@ -31,21 +32,17 @@ public class NPCFollower : MonoBehaviour
             pet_pos = pet.localPosition;
             player_pos = player.localPosition;
             dist = (player_pos - pet_pos).magnitude;
-            Vector2 aim_Vector = player_pos - pet_pos;
 
             if (dist > firstDist)
             {
-                distance = player_pos - (aim_Vector / aim_Vector.magnitude) * firstDist;
-                pet.localPosition = Vector2.Lerp(pet_pos, distance, delay);
+                Vector2 aim_Vector = player_pos - pet_pos;
+                rb.velocity = aim_Vector * speed;
             }
-            if (havingSpecifiedZone)
+            else
             {
-                if (dist < firstDist)
-                {
-                    distance = (-aim_Vector / aim_Vector.magnitude) * firstDist;
-                    pet.localPosition = Vector2.Lerp(pet_pos, distance, Mathf.SmoothStep(0f, 1f, delay));
-                }
+                rb.velocity = Vector2.zero;
             }
+
         }
     }
 }
