@@ -376,7 +376,6 @@ MonoBehaviour:
   player: {fileID: 698985035}
   speed: 3
   firstDist: 2
-  isForwarding: 1
 --- !u!212 &1027098682
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class NPCFollower : MonoBehaviour
     float firstDist;
 
     Rigidbody2D rb;
-    public bool isForwarding = true;
+    bool isForwarding = true;
 
     Vector2 player_pos, pet_pos;
     
@@ -44,4 +44,13 @@ public class NPCFollower : MonoBehaviour
 
         }
     }
+    public void startForwarding()
+    {
+        isForwarding = true;
+    }
+    public void stopForwarding()
+    {
+        isForwarding = false;
+    }
+
 }
