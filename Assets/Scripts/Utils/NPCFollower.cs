@@ -26,7 +26,7 @@ public class NPCFollower : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		
 		if(getPlayerAsTarget){
-			player = GameObject.FindGameObjectWithTag("Player").transform;
+			player = GameObject.FindGameObjectWithTag("player").transform;
 		}
 	}
 
