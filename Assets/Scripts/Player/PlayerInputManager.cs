@@ -7,6 +7,7 @@ public class PlayerInputManager : MonoBehaviour
 
     [HideInInspector]
     public bool dashPressed;
+    public bool slamPressed;
     
     void Update(){
         moveDirection.x = Input.GetAxisRaw("Horizontal");
@@ -14,5 +15,8 @@ public class PlayerInputManager : MonoBehaviour
         moveDirection.Normalize();
         if (Input.GetKeyDown(KeyCode.Space)) dashPressed = true;
         else dashPressed = false;
+
+       if (Input.GetKeyDown(KeyCode.LeftShift)) slamPressed = true;
+       else slamPressed = false;
     }
 }
