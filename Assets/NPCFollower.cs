@@ -29,7 +29,7 @@ public class NPCFollower : MonoBehaviour
         if (isForwarding)
         {
             pet_pos = rb.position;
-            player_pos = player.localPosition;
+            player_pos = player.position;
             dist = (player_pos - pet_pos).magnitude;
 
             if (dist > firstDist)

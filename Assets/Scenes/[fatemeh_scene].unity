@@ -374,7 +374,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 698985035}
-  pet: {fileID: 1027098683}
   speed: 3
   firstDist: 2
   isForwarding: 1
