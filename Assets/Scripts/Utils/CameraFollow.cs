@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
         cmOffset = transform.position - PlayerrTransform.position;
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Vector3 newPos = PlayerrTransform.position + cmOffset;
 
