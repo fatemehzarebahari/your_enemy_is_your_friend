@@ -18,8 +18,8 @@ public class ProjectileLuncher : MonoBehaviour
     float aimingLength = 1;
 
 
-    bool aim = false;
-    bool shooting = false;
+    [SerializeField] bool aim = false;
+    [SerializeField] bool shooting = false;
 
     Transform player;
     LineRenderer line;
@@ -48,6 +48,7 @@ public class ProjectileLuncher : MonoBehaviour
         
 
     }
+    
     void aim_line()
     {
         Vector2 target_position = player.position + (player.position - transform.position) * aimingLength;
@@ -56,6 +57,7 @@ public class ProjectileLuncher : MonoBehaviour
         line.endWidth = 0.1f;
         line.SetPositions(position);
     }
+    
     void shoot_bullet()
     {
         Vector2 aim = player.position - shoothingStartPosition.position;
