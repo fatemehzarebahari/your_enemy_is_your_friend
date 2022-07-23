@@ -1,29 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HostScript : MonoBehaviour
 {
+
+
+
+
     [SerializeField]
     private int level = 1, minActiveEnemies = 5;
 
     private GameObject[] spawnPoints, activeEnemies;
 
     [SerializeField, Min(0f)]
-    private float attackCoolDown = 1f, spawnDelay = 0.3f;
+    private float hostHealth = 100f, damgeTakenMultiplier = 5f, attackCoolDown = 1f, spawnDelay = 0.3f;
 
     [SerializeField] private GameObject[] enemies;
+    [SerializeField] private Slider healthbar;
 
     private float timer = 0.0f, spawnTimer = 0f, newAttackCoolDown = 0f;
     private int[] blackList;
-    private int spawnCounter = 1;
+    private int spawnCounter = 1, lastActiveEnemies = 0;
 
     [Header("Effects")]
     [SerializeField]
     private GameObject lightning;
+    [SerializeField]
+    private AudioSource explosionSound, landingSound;
+
+    private Animator animator;
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
+
+        healthbar.maxValue = hostHealth;
+        healthbar.value = hostHealth;
+
         newAttackCoolDown = attackCoolDown;
 
         spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
@@ -38,33 +53,34 @@ public class HostScript : MonoBehaviour
     private void Update()
     {
         activeEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        //spawn
-        if (activeEnemies.Length < minActiveEnemies) 
+
+
+        //Take Damage
+        if (activeEnemies.Length < lastActiveEnemies)
         {
-            if (spawnDelay < spawnTimer)
-            {
-                int spawnerIndex = Random.Range(0, spawnPoints.Length);
-                while(blackList[spawnerIndex] != 0)
-                    spawnerIndex = Random.Range(0, spawnPoints.Length);
-                blackList[spawnerIndex] = spawnerIndex + 1;
-                int Enemy = Random.Range(0, enemies.Length);
-                Instantiate(lightning, (spawnPoints[spawnerIndex].transform.position), Quaternion.identity);
-                Instantiate(enemies[Enemy], spawnPoints[spawnerIndex].transform.position, Quaternion.identity);
-                spawnTimer = 0;
-                spawnCounter++;
-            }
+            int damage = lastActiveEnemies - activeEnemies.Length;
+            healthbar.value -= damage * damgeTakenMultiplier;
+        }
+        lastActiveEnemies = activeEnemies.Length;
+        //EO Dameage
+
+        //Spawn
+        if (activeEnemies.Length < minActiveEnemies + level) 
+        {
+            animator.SetTrigger("SpawnEnemy");
+
+
             if (spawnCounter > spawnPoints.Length || activeEnemies.Length >= minActiveEnemies) 
             {
                 spawnCounter = 1;
                 for (int i = 0; i < spawnPoints.Length; i++)
                     blackList[i] = 0;
             }
-            spawnTimer += Time.deltaTime;
         }
+        //EO Spawn
 
 
         //Attack
-
         if (timer > newAttackCoolDown)
         {
             for (int i = 0; i < activeEnemies.Length; i++)
@@ -81,6 +97,38 @@ public class HostScript : MonoBehaviour
         }
         timer += Time.deltaTime;
 
+        //EO Attack
+    }
+
+    IEnumerator SpawnEnmies() 
+    {
+        while (activeEnemies.Length < minActiveEnemies)
+        {
+            yield return new WaitForSeconds(spawnDelay);
+            Spawn();
+        }
+    }
+
+    private void Spawn()
+    {
+            spawnCounter++;
+        if (spawnCounter <= blackList.Length + 1)
+        {
+            explosionSound.Play();
+            int spawnerIndex = Random.Range(0, spawnPoints.Length);
+            while (blackList[spawnerIndex] != 0)
+                spawnerIndex = Random.Range(0, spawnPoints.Length);
+            blackList[spawnerIndex] = spawnerIndex + 1;
+            int Enemy = Random.Range(0, enemies.Length);
+            Instantiate(lightning, (spawnPoints[spawnerIndex].transform.position), Quaternion.identity);
+            Instantiate(enemies[Enemy], spawnPoints[spawnerIndex].transform.position, Quaternion.identity);
+        }
+    }
+
+
+    private void playLanding() 
+    {
+        landingSound.Play();
     }
 
 }
