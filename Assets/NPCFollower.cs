@@ -4,7 +4,7 @@ using UnityEngine;
 public class NPCFollower : MonoBehaviour
 {
     [SerializeField]
-    Transform player, pet;
+    Transform player;
 
     [SerializeField]
     float speed = 3f;
@@ -13,7 +13,6 @@ public class NPCFollower : MonoBehaviour
     float firstDist;
 
     Rigidbody2D rb;
-
     public bool isForwarding = true;
 
     Vector2 player_pos, pet_pos;
@@ -29,7 +28,7 @@ public class NPCFollower : MonoBehaviour
     {
         if (isForwarding)
         {
-            pet_pos = pet.localPosition;
+            pet_pos = rb.position;
             player_pos = player.localPosition;
             dist = (player_pos - pet_pos).magnitude;
 
