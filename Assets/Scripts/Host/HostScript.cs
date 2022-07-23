@@ -1,14 +1,12 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using Random = UnityEngine.Random;
 public class HostScript : MonoBehaviour
 {
-
-
-
-
+    public event Action onAttack;
     [SerializeField]
     private int level = 1, minActiveEnemies = 5;
 
@@ -83,14 +81,7 @@ public class HostScript : MonoBehaviour
         //Attack
         if (timer > newAttackCoolDown)
         {
-            for (int i = 0; i < activeEnemies.Length; i++)
-            {
-              int shouldAttack = Random.Range(1, 4);
-              if (shouldAttack == 3)
-              {
-                print("Enemy (" + i + ") Attacked");
-              }
-            }   
+            onAttack?.Invoke(); 
             
             timer = 0;
             newAttackCoolDown = Random.Range(attackCoolDown - 2, attackCoolDown);
@@ -121,14 +112,15 @@ public class HostScript : MonoBehaviour
             blackList[spawnerIndex] = spawnerIndex + 1;
             int Enemy = Random.Range(0, enemies.Length);
             Instantiate(lightning, (spawnPoints[spawnerIndex].transform.position), Quaternion.identity);
-            Instantiate(enemies[Enemy], spawnPoints[spawnerIndex].transform.position, Quaternion.identity);
+            GameObject enemy = Instantiate(enemies[Enemy], spawnPoints[spawnerIndex].transform.position, Quaternion.identity);
+            enemy.GetComponent<EnemyManager>().IntroduceHost(this);
         }
     }
 
 
     private void playLanding() 
     {
-        landingSound.Play();
+        // landingSound.Play();
     }
 
 }

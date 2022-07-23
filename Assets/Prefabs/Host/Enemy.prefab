@@ -10,11 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 939412604384706470}
   - component: {fileID: 2116003184041684451}
-  - component: {fileID: -297335337653101902}
   - component: {fileID: 4597796128924881023}
-  - component: {fileID: 7675033396344912767}
+  - component: {fileID: -297335337653101902}
+  - component: {fileID: -6277429657149095330}
+  - component: {fileID: -7575538780064849658}
+  - component: {fileID: 8674565168287564212}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 2115198690847950194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.53, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1783141120, guid: edcf76377f0b78849a6b2079fdf775df, type: 3}
   m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,22 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-297335337653101902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2115198690847950194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f43d8b508c3b624d93783ff69dabbe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 0.7
-  range: 0
-  getPlayerAsTarget: 1
 --- !u!50 &4597796128924881023
 Rigidbody2D:
   serializedVersion: 4
@@ -118,14 +104,61 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &7675033396344912767
-CircleCollider2D:
+--- !u!114 &-297335337653101902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115198690847950194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f43d8b508c3b624d93783ff69dabbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  speed: 30
+  range: 0
+  getPlayerAsTarget: 1
+--- !u!114 &-6277429657149095330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115198690847950194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b961977222b61e449e7b5b84d171cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimDelay: 1
+  lockDelay: 0.5
+  aimSpeed: 5
+--- !u!114 &-7575538780064849658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115198690847950194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740929a42be779949ac6b5a4fb51ebb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linePrefab: {fileID: 5451144767782172217, guid: cad60aa0487294943882caa5465b033d, type: 3}
+  bulletPrefab: {fileID: 168831371395952902, guid: cff4c8ef02bb60545a04d56aa129c74e, type: 3}
+  shoothingStartPosition: {fileID: 939412604384706470}
+  aimingLength: 1
+--- !u!70 &8674565168287564212
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,6 +170,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Offset: {x: -0.04572739, y: -0.03777494}
+  m_Size: {x: 0.5614329, y: 0.7681999}
+  m_Direction: 0

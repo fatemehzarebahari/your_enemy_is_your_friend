@@ -19,25 +19,26 @@ public class ProjectileLuncher : MonoBehaviour
 
 
     bool aim = false;
+    bool locked = false;
     bool shooting = false;
 
     Transform player;
     LineRenderer line;
 
-
+    Vector2 target_position;
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         line = Instantiate(linePrefab);
     }
     void Update()
     {
-        if (aim)
+        if (aim && !locked)
         {
             aim_line();
             line.enabled = true;
         }
-        else
+        else if (!aim)
             line.enabled = false;
 
         if (shooting)
@@ -45,12 +46,11 @@ public class ProjectileLuncher : MonoBehaviour
             shoot_bullet();
             shooting = false;
         }
-        
 
     }
     void aim_line()
     {
-        Vector2 target_position = player.position + (player.position - transform.position) * aimingLength;
+       target_position = player.position + (player.position - transform.position) * aimingLength;
         Vector3[] position = new Vector3[3] { transform.position, target_position, new Vector3(0, 0, 0) };
         line.startWidth = 0.1f;
         line.endWidth = 0.1f;
@@ -58,7 +58,7 @@ public class ProjectileLuncher : MonoBehaviour
     }
     void shoot_bullet()
     {
-        Vector2 aim = player.position - shoothingStartPosition.position;
+        Vector2 aim = target_position - (Vector2)shoothingStartPosition.position;
         GameObject bullet_Obj = Instantiate(bulletPrefab, shoothingStartPosition.position, new Quaternion());
         bullet_Obj.GetComponent<bullet>().shoot(aim);
     
@@ -68,9 +68,14 @@ public class ProjectileLuncher : MonoBehaviour
     {
         aim = true;
     }
+
+    public void setLocked(){
+        locked = true;
+    }
     public void stopAiming()
     {
         aim = false;
+        locked = false;
     }
     public void shoot()
     {
