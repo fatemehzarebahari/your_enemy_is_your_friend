@@ -348,9 +348,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   minActiveEnemies: 5
-  attackCoolDown: 1
+  attackCoolDown: 5
+  spawnDelay: 1
   enemies:
-  - {fileID: 5151210346344890658, guid: 3c378a26130bc0e42965e0e943bcef17, type: 3}
+  - {fileID: 2115198690847950194, guid: 573c67c2272ea344593155ec6e3556a0, type: 3}
+  lightning: {fileID: 8590395441758624566, guid: 807d2830db3517544bca13224a173a11, type: 3}
 --- !u!212 &1250943606
 SpriteRenderer:
   m_ObjectHideFlags: 0

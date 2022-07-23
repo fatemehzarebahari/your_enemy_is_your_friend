@@ -10,16 +10,22 @@ public class HostScript : MonoBehaviour
     private GameObject[] spawnPoints, activeEnemies;
 
     [SerializeField, Min(0f)]
-    private float attackCoolDown = 1f;
+    private float attackCoolDown = 1f, spawnDelay = 0.3f;
 
     [SerializeField] private GameObject[] enemies;
 
-    private float timer = 0.0f, spawnDelay = 0.3f, spawnTimer = 0f;
+    private float timer = 0.0f, spawnTimer = 0f, newAttackCoolDown = 0f;
     private int[] blackList;
     private int spawnCounter = 1;
 
+    [Header("Effects")]
+    [SerializeField]
+    private GameObject lightning;
+
     private void Awake()
     {
+        newAttackCoolDown = attackCoolDown;
+
         spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
         blackList = new int[spawnPoints.Length];
         for (int i = 0; i < spawnPoints.Length; i++)
@@ -42,6 +48,7 @@ public class HostScript : MonoBehaviour
                     spawnerIndex = Random.Range(0, spawnPoints.Length);
                 blackList[spawnerIndex] = spawnerIndex + 1;
                 int Enemy = Random.Range(0, enemies.Length);
+                Instantiate(lightning, (spawnPoints[spawnerIndex].transform.position), Quaternion.identity);
                 Instantiate(enemies[Enemy], spawnPoints[spawnerIndex].transform.position, Quaternion.identity);
                 spawnTimer = 0;
                 spawnCounter++;
@@ -57,19 +64,20 @@ public class HostScript : MonoBehaviour
 
 
         //Attack
-        for (int i = 0; i < activeEnemies.Length; i++)
-        {
-            int shouldAttack = Random.Range(1, 3);
-            if (shouldAttack == 3)
-            {
-                //attack
-            }
-        }
 
-        if (timer > attackCoolDown)
+        if (timer > newAttackCoolDown)
         {
-           
+            for (int i = 0; i < activeEnemies.Length; i++)
+            {
+              int shouldAttack = Random.Range(1, 4);
+              if (shouldAttack == 3)
+              {
+                print("Enemy (" + i + ") Attacked");
+              }
+            }   
+            
             timer = 0;
+            newAttackCoolDown = Random.Range(attackCoolDown - 2, attackCoolDown);
         }
         timer += Time.deltaTime;
 
