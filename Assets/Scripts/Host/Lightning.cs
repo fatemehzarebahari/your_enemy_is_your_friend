@@ -9,6 +9,12 @@ public class Lightning : MonoBehaviour
 
     [SerializeField]
     private float timer = 0, maxTime = 0;
+
+    private void Start()
+    {
+        timer = 0;
+    }
+
     void Update()
     {
         if (timer > maxTime)
