@@ -119,12 +119,12 @@ TextureImporter:
       name: small morun_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 195
-        width: 82
+        width: 18
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: small morun_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 156
-        width: 82
+        width: 18
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: small morun_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 117
-        width: 82
+        width: 18
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: small morun_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 78
-        width: 82
+        width: 18
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: small morun_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 39
-        width: 82
+        width: 18
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: small morun_5
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 0
-        width: 82
+        width: 18
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
