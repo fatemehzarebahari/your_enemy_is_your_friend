@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimDelay: 0.5
-  lockDelay: 0.2
-  aimSpeed: 3
+  lockDelay: 0.3
+  aimSpeed: 0.1
   shootPosition: {fileID: 622869676497992241}
 --- !u!114 &-7575538780064849658
 MonoBehaviour:
@@ -174,8 +174,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04572739, y: -0.03777494}
-  m_Size: {x: 0.5614329, y: 0.7681999}
+  m_Offset: {x: -0.040272772, y: -0.0036836588}
+  m_Size: {x: 0.34324852, y: 0.70001733}
   m_Direction: 0
 --- !u!95 &-1221471241439174669
 Animator:
@@ -248,7 +248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7827521387481786700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.512, y: 0.014, z: 0}
+  m_LocalPosition: {x: 0.357, y: 0.139, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
