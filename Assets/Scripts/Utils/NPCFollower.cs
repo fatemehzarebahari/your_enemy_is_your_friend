@@ -4,10 +4,11 @@ using UnityEngine;
 public class NPCFollower : MonoBehaviour
 {
 	[SerializeField]
-	Transform player;
+	public Transform player;
 
 	[SerializeField]
-	float speed = 3f;
+	float speed = 30f;
+	private float currentSpeed;
 
 	[SerializeField]
 	float range;
@@ -24,7 +25,8 @@ public class NPCFollower : MonoBehaviour
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		
+		currentSpeed = speed;
+
 		if(getPlayerAsTarget){
 			player = GameObject.FindGameObjectWithTag("Player").transform;
 		}
@@ -42,22 +44,32 @@ public class NPCFollower : MonoBehaviour
 			if (dist > range)
 			{
 				Vector2 aim_Vector = player_pos - pet_pos;
-				rb.velocity = aim_Vector.normalized * speed;
+				rb.velocity = aim_Vector.normalized * currentSpeed;
 			}
 			else
 			{
 				rb.velocity = Vector2.zero;
 			}
-
 		}
 	}
+
 	public void startForwarding()
 	{
 		isForwarding = true;
+		resetSpeed();
 	}
+
 	public void stopForwarding()
 	{
 		isForwarding = false;
+		rb.velocity = Vector2.zero;
 	}
 
+	public void setSpeed(float speed){
+		currentSpeed = speed;
+	}
+
+	public void resetSpeed(){
+		currentSpeed = speed;
+	}
 }

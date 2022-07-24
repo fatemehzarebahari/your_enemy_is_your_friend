@@ -14,13 +14,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate(){
-        if (!GetComponent<PlayerDash>().isDashing)
-            Move();
+        Move(); 
     }
 
     void Move(){
         var moveDirection = GetComponent<PlayerInputManager>().moveDirection;
-        rb.velocity = moveDirection * moveSpeed * Time.deltaTime * 10; 
+        if (!GetComponent<PlayerDash>().isDashing)
+            rb.velocity = moveDirection * moveSpeed * Time.deltaTime * 10; 
         if (moveDirection.x > 0) animator.SetTrigger("right");
         else if (moveDirection.x < 0) animator.SetTrigger("left");
         else if (moveDirection.y > 0) animator.SetTrigger("up");
