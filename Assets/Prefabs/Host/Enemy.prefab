@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 20
+  speed: 1
   range: 0
   getPlayerAsTarget: 1
 --- !u!114 &-6277429657149095330

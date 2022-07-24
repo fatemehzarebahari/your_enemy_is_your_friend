@@ -44,20 +44,21 @@ public class NPCFollower : MonoBehaviour
 			if (dist > range)
 			{
 				Vector2 aim_Vector = player_pos - pet_pos;
-				rb.velocity = aim_Vector.normalized * currentSpeed * Time.deltaTime * 50;
+				rb.velocity = aim_Vector.normalized * currentSpeed;
 			}
 			else
 			{
 				rb.velocity = Vector2.zero;
 			}
-
 		}
 	}
+
 	public void startForwarding()
 	{
 		isForwarding = true;
 		resetSpeed();
 	}
+
 	public void stopForwarding()
 	{
 		isForwarding = false;
