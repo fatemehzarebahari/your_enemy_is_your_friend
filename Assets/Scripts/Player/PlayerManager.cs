@@ -1,33 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
-  public bool isAlive;
+public bool isAlive = true;
 private Animator animator;
+[SerializeField]
+private GameObject gameOverCanvas;
 
 private void Awake(){
     animator = GetComponent<Animator>();
 
 }
 
-
-// void Update(){
-//     if(isAlive==false){
-//         animator.SetTrigger("staydead");
-
-//     }
-// }
   public void OnCollisionEnter2D(Collision2D collision){
-    if(collision.gameObject.tag=="Bullets"){
+    if(collision.gameObject.tag=="Bullet"){
         Debug.Log("Bullets detected");
-        isAlive=true;
-        // animator.SetBool("die",true);
+        isAlive = false;
+        gameOverCanvas.SetActive(true);
+        // animator.SetTrigger("die");
         animator.SetTrigger("staydead");
-
-
     }
   }
-    
+
+  public void OnRestart(){
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+  }
 }

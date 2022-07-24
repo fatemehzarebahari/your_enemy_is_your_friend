@@ -58,7 +58,6 @@ public class PetSlam : MonoBehaviour
 				image.rectTransform.localScale = new Vector3(7, image.rectTransform.localScale.y, image.rectTransform.localScale.z);
 				textRelease.SetActive(true);
 			}
-
 		}
 		else
 		{
@@ -70,8 +69,6 @@ public class PetSlam : MonoBehaviour
 
 			if (image.rectTransform.localScale.x <= 0)
 				image.rectTransform.localScale = new Vector3(0, image.rectTransform.localScale.y, image.rectTransform.localScale.z);
-
-
 		}
 
 		if (manaBarFilled && chargedUp && Input.GetKeyUp(KeyCode.LeftShift))
@@ -79,11 +76,7 @@ public class PetSlam : MonoBehaviour
 			animator.SetTrigger("Attack");
 			chargedUp = false;
 			ManaBarSetZeroValue();
-			
 		}
-
-
-		
 	}
 
 	public void Slam(){

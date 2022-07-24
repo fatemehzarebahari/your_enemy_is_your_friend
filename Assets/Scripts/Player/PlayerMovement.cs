@@ -14,7 +14,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate(){
-        Move(); 
+        if (GetComponent<PlayerManager>().isAlive)
+            Move();
+        else rb.velocity = new Vector2(0,0); 
     }
 
     void Move(){
