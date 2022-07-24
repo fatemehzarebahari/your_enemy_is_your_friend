@@ -9,6 +9,7 @@ TagManager:
   - SpawnPoint
   - player
   - Bullet
+  - CameraHolder
   layers:
   - Default
   - TransparentFX
@@ -16,10 +17,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Bullet
+  - Pet
   - 
   - 
   - 
