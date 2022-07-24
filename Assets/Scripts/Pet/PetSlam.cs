@@ -9,12 +9,12 @@ public class PetSlam : MonoBehaviour
 
     private Vector2 Center;
 
-    [SerializeField, Range(50f,250f)]
+    [SerializeField, Range(0f,250f)]
     public float explosionStrength ;
 
      void Awake(){
         Center =   PetPos.position;
-        explosionStrength = 50f;
+        explosionStrength = 5f;
     }
 
 
@@ -38,9 +38,17 @@ public class PetSlam : MonoBehaviour
                     colliders[i].GetComponent<NPCFollower>().stopForwarding();
                     Vector2 ForceVec = -colliders[i].GetComponent<Rigidbody2D>().velocity.normalized * explosionStrength;
                     colliders[i].GetComponent<Rigidbody2D>().AddForce(ForceVec);
+                    waiter();
                 }
             }
             
         }
     }
+
+    IEnumerator waiter(){
+        yield return new WaitForSeconds(10);
+        GetComponent<NPCFollower>().startForwarding();
+
+    }
+
 }
