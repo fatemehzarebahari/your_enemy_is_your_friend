@@ -119,12 +119,12 @@ TextureImporter:
       name: move without FX_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 182
-        width: 117
+        width: 22
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: move without FX_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 156
-        width: 117
+        width: 22
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: move without FX_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 130
-        width: 117
+        width: 22
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: move without FX_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 104
-        width: 117
+        width: 22
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: move without FX_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 78
-        width: 117
+        width: 22
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: move without FX_5
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 52
-        width: 117
+        width: 22
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -245,12 +245,12 @@ TextureImporter:
       name: move without FX_6
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 26
-        width: 117
+        width: 22
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,12 +266,12 @@ TextureImporter:
       name: move without FX_7
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 0
-        width: 117
+        width: 22
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
