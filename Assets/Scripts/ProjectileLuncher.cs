@@ -17,12 +17,7 @@ public class ProjectileLuncher : MonoBehaviour
 	float aimingLength = 1;
 
 	bool aim = false;
-	bool locked = false;
-	bool shooting = false;
-
 	Transform player;
-	
-
 	Vector2 target_position;
 
 	private void Awake()
@@ -33,53 +28,36 @@ public class ProjectileLuncher : MonoBehaviour
 
 	void Update()
 	{
-		if (aim && !locked)
+		if (aim)
 		{
 			aim_line();
 			line.enabled = true;
 		}
-		else if (!aim)
+		else
 			line.enabled = false;
-
-		if (shooting)
-		{
-			shoot_bullet();
-			shooting = false;
-		}
 	}
 
 	void aim_line()
 	{
-		;
-		target_position = player.position + (player.position - shoothingStartPosition.position) * aimingLength;
 		Vector3[] position = new Vector3[3] { shoothingStartPosition.position, target_position, new Vector3(0, 0, 0) };
 		line.SetPositions(position);
 	}
 
-	void shoot_bullet()
+	public void Shoot()
 	{
 		Vector2 aim = target_position - (Vector2)shoothingStartPosition.position;
 		GameObject bullet_Obj = Instantiate(bulletPrefab, shoothingStartPosition.position, new Quaternion());
 		bullet_Obj.GetComponent<bullet>().shoot(aim);
 	}
 
-	public void aiming()
+	public void StartAiming()
 	{
 		aim = true;
-	}
-
-	public void setLocked(){
-		locked = true;
+		target_position = player.position + (player.position - shoothingStartPosition.position) * aimingLength;
 	}
 
 	public void stopAiming()
 	{
 		aim = false;
-		locked = false;
-	}
-
-	public void shoot()
-	{
-		shooting = true;
 	}
 }
