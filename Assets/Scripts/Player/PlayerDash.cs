@@ -7,7 +7,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField, Range(0f,250f)]
     float dashSpeed = 120f;
 
-    [SerializeField, Range(0f,1f)]
+    [SerializeField, Range(0.1f,1f)]
     float dashDuration = 0.25f;
     private float currentDashTime = 0f;
 
@@ -41,7 +41,7 @@ public class PlayerDash : MonoBehaviour
             currentDashTime = 0;
             isDashing = false;
             currentCooldownTime += Time.deltaTime;
-            //transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
         if (currentCooldownTime < dashCooldownDuration && currentCooldownTime > 0){
             currentCooldownTime += Time.deltaTime;
