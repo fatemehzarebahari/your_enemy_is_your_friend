@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     private HostScript host;
-    private bool isAiming, isLocked;
+    public bool isAiming, isLocked;
 
     [SerializeField]
     float aimDelay = 1f, lockDelay = 0.5f, aimSpeed = 15f;
