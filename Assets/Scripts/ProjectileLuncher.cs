@@ -50,8 +50,8 @@ public class ProjectileLuncher : MonoBehaviour
     }
     void aim_line()
     {
-       target_position = player.position + (player.position - transform.position) * aimingLength;
-        Vector3[] position = new Vector3[3] { transform.position, target_position, new Vector3(0, 0, 0) };
+       target_position = player.position + (player.position - shoothingStartPosition.position) * aimingLength;
+        Vector3[] position = new Vector3[3] { shoothingStartPosition.position, target_position, new Vector3(0, 0, 0) };
         line.startWidth = 0.1f;
         line.endWidth = 0.1f;
         line.SetPositions(position);

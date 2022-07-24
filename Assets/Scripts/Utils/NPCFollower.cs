@@ -4,7 +4,7 @@ using UnityEngine;
 public class NPCFollower : MonoBehaviour
 {
 	[SerializeField]
-	Transform player;
+	public Transform player;
 
 	[SerializeField]
 	float speed = 30f;
@@ -44,7 +44,7 @@ public class NPCFollower : MonoBehaviour
 			if (dist > range)
 			{
 				Vector2 aim_Vector = player_pos - pet_pos;
-				rb.velocity = aim_Vector.normalized * currentSpeed * Time.deltaTime * 10;
+				rb.velocity = aim_Vector.normalized * currentSpeed * Time.deltaTime * 50;
 			}
 			else
 			{
