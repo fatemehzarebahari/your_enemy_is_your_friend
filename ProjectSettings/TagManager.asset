@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - 'SpawnPoint '
+  - Enemy
   - SpawnPoint
+  - player
   layers:
   - Default
   - TransparentFX
@@ -50,4 +53,7 @@ TagManager:
     locked: 0
   - name: Layer 3
     uniqueID: 4189426099
+    locked: 0
+  - name: Layer 4
+    uniqueID: 1495301297
     locked: 0

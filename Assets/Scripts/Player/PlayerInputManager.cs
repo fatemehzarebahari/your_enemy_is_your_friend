@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerInputManager : MonoBehaviour
 {
-    [HideInInspector]
     public Vector2 moveDirection;
 
     [HideInInspector]
