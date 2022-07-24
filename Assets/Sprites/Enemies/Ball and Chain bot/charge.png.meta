@@ -119,12 +119,12 @@ TextureImporter:
       name: charge_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 45
         y: 117
-        width: 126
-        height: 39
+        width: 35
+        height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: charge_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 78
-        width: 126
-        height: 39
+        x: 45
+        y: 80
+        width: 35
+        height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: charge_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 39
-        width: 126
-        height: 39
+        x: 45
+        y: 43
+        width: 35
+        height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: charge_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 126
-        height: 39
+        x: 45
+        y: 6
+        width: 35
+        height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
