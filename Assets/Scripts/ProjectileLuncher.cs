@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileLuncher : MonoBehaviour
 {
 	[SerializeField]
-	LineRenderer linePrefab;
+	LineRenderer line;
 
 	[SerializeField]
 	GameObject bulletPrefab;
@@ -21,14 +21,14 @@ public class ProjectileLuncher : MonoBehaviour
 	bool shooting = false;
 
 	Transform player;
-	LineRenderer line;
+	
 
 	Vector2 target_position;
 
 	private void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
-		line = Instantiate(linePrefab);
+		line.enabled = false;
 	}
 
 	void Update()
@@ -50,6 +50,7 @@ public class ProjectileLuncher : MonoBehaviour
 
 	void aim_line()
 	{
+		;
 		target_position = player.position + (player.position - shoothingStartPosition.position) * aimingLength;
 		Vector3[] position = new Vector3[3] { shoothingStartPosition.position, target_position, new Vector3(0, 0, 0) };
 		line.SetPositions(position);

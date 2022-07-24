@@ -16,9 +16,9 @@ public class EnemyManager : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-		public void GetKilled(){
+        public void GetKilled(){
 			Destroy(gameObject);
-		}
+    }
 
     void Awake(){
         animator = GetComponent<Animator>();
