@@ -2,13 +2,20 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 using Random = UnityEngine.Random;
 public class HostScript : MonoBehaviour
 {
 	public event Action onAttack;
 	[SerializeField]
-	private int level = 1, minActiveEnemies = 5;
+	private int level = 1;
+
+	[Header("Host Control")]
+	[SerializeField, Min(2)]
+	private int minActiveEnemies = 5;
+	[SerializeField, Min(0)]
+	private int spawnRate = 5;
 
 	private GameObject[] spawnPoints, activeEnemies;
 
@@ -58,14 +65,17 @@ public class HostScript : MonoBehaviour
 		//Take Damage
 		if (activeEnemies.Length < lastActiveEnemies)
 		{
+			animator.SetTrigger("GetHurt");
 			int damage = lastActiveEnemies - activeEnemies.Length;
 			healthbar.value -= damage * damgeTakenMultiplier;
+			if (healthbar.value <= 0)
+				onWin();
 		}
 		lastActiveEnemies = activeEnemies.Length;
 		//EO Dameage
 
 		//Spawn
-		if (activeEnemies.Length < minActiveEnemies + level) 
+		if (activeEnemies.Length < minActiveEnemies + level + Random.Range(0, spawnRate + 1)) 
 		{
 			animator.SetTrigger("SpawnEnemy");
 
@@ -93,19 +103,11 @@ public class HostScript : MonoBehaviour
 		//EO Attack
 	}
 
-	IEnumerator SpawnEnmies() 
-	{
-		while (activeEnemies.Length < minActiveEnemies)
-		{
-			yield return new WaitForSeconds(spawnDelay);
-			Spawn();
-		}
-	}
 
 	private void Spawn()
 	{
 		spawnCounter++;
-		if (spawnCounter <= blackList.Length + 1)
+		if (spawnCounter < blackList.Length + Random.Range(0,2))
 		{
 			explosionSound.Play();
 			int spawnerIndex = Random.Range(0, spawnPoints.Length);
@@ -126,7 +128,13 @@ public class HostScript : MonoBehaviour
 
 	private void playLanding() 
 	{
-		// landingSound.Play();
+		 landingSound.Play();
+	}
+
+
+	private void onWin() 
+	{
+		print("YOU WON!");
 	}
 
 }

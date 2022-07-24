@@ -9,6 +9,7 @@ TagManager:
   - SpawnPoint
   - player
   - Bullet
+  - CameraHolder
   layers:
   - Default
   - TransparentFX
