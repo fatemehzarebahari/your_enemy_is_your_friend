@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 
 public class NPCFollower : MonoBehaviour
 {
@@ -63,6 +64,12 @@ public class NPCFollower : MonoBehaviour
 	{
 		isForwarding = false;
 		rb.velocity = Vector2.zero;
+	}
+
+	public IEnumerator StopFollowingFor(float duration){
+		isForwarding = false;
+		yield return new WaitForSeconds(duration);
+		isForwarding = true;
 	}
 
 	public void setSpeed(float speed){

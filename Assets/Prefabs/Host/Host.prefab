@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  minActiveEnemies: 7
+  minActiveEnemies: 2
   hostHealth: 100
   damgeTakenMultiplier: 5
   attackCoolDown: 5
