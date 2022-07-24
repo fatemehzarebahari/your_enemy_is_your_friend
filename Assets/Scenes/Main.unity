@@ -6703,6 +6703,18 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5277481943389454841, guid: d18c6720a27cb624f92d7371a99c433d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62877
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277481943389454841, guid: d18c6720a27cb624f92d7371a99c433d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62877
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277481943389454841, guid: d18c6720a27cb624f92d7371a99c433d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62877
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277481943389454841, guid: d18c6720a27cb624f92d7371a99c433d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.87408537
       objectReference: {fileID: 0}
@@ -10212,7 +10224,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.12
+  orthographic size: 4.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
