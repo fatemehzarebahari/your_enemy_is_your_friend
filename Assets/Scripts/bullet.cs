@@ -13,8 +13,13 @@ public class bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
     public void shoot(Vector2 aim)
     {
-        rb.AddForce(aim * bulletSpeed);
+        rb.velocity = aim.normalized * bulletSpeed;
     }
+
+		private void OnCollisionEnter2D(Collision2D other){
+			Destroy(gameObject);
+		}
 }
