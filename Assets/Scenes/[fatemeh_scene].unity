@@ -405,10 +405,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linePrefab: {fileID: 5451144767782172217, guid: cad60aa0487294943882caa5465b033d, type: 3}
   bulletPrefab: {fileID: 168831371395952902, guid: cff4c8ef02bb60545a04d56aa129c74e, type: 3}
-  bulletSpeed: 100
   shoothingStartPosition: {fileID: 543659317}
   aimingLength: 0
-  aim: 1
+  aim: 0
   shooting: 0
 --- !u!58 &1566648370
 CircleCollider2D:
