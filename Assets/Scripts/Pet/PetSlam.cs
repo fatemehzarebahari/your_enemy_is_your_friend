@@ -25,6 +25,12 @@ public class PetSlam : MonoBehaviour
 	private Image image;
 	[SerializeField]
 	private GameObject textRelease;
+	[SerializeField]
+	Slider manaBar;
+	[SerializeField]
+	float chargeManaBarDuration = 20f;
+
+	public bool manaBarFilled = false;
 
     private void Start()
     {
@@ -32,7 +38,10 @@ public class PetSlam : MonoBehaviour
 		camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		camHolder = GameObject.FindGameObjectWithTag("CameraHolder");
 		preSize = camera.orthographicSize;
-    }
+		manaBar.value = 100;
+		manaBarFilled = true;
+		//StartCoroutine(ChargeManaBar());
+	}
     void Update() {
 		if (Input.GetKey(KeyCode.LeftShift))
 		{
@@ -65,10 +74,12 @@ public class PetSlam : MonoBehaviour
 
 		}
 
-		if (chargedUp && Input.GetKeyUp(KeyCode.LeftShift))
+		if (manaBarFilled && chargedUp && Input.GetKeyUp(KeyCode.LeftShift))
 		{
 			animator.SetTrigger("Attack");
 			chargedUp = false;
+			ManaBarSetZeroValue();
+			
 		}
 
 
@@ -120,5 +131,31 @@ public class PetSlam : MonoBehaviour
 			yield return null;
 		}
 		camHolder.transform.localPosition = origin;
+	}
+
+	private void ManaBarSetZeroValue()
+    {
+
+		manaBar.value = 0;
+		manaBarFilled = false;
+		StartCoroutine(ChargeManaBar());
+
+	}
+	private IEnumerator ChargeManaBar()
+	{
+
+		float t = 0;
+		while (t < chargeManaBarDuration)
+		{
+			t += Time.deltaTime ;
+
+			manaBar.value = (t/chargeManaBarDuration)*100 ;
+
+			yield return null;
+            
+		}
+
+		manaBarFilled = true;
+
 	}
 }

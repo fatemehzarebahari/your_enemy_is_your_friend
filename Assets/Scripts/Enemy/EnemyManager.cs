@@ -16,12 +16,8 @@ public class EnemyManager : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-<<<<<<< HEAD
-        public void GetKilled(){
-=======
 		public void GetKilled(){
         
->>>>>>> YasinSHV
 			Destroy(gameObject);
     }
 
