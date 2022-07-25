@@ -9,7 +9,11 @@ public class PetSlam : MonoBehaviour
 	public Transform PetPos;
 
 	[SerializeField]
-	AudioSource releaseSoundEffect;
+	AudioSource releaseAudio;
+	bool releaseSound = true;
+
+	[SerializeField]
+	AudioSource FillingreleaseAudio;
 
 	private Vector2 Center;
 
@@ -43,9 +47,22 @@ public class PetSlam : MonoBehaviour
 		preSize = camera.orthographicSize;
 		manaBar.value = 100;
 		manaBarFilled = true;
-		//StartCoroutine(ChargeManaBar());
 	}
     void Update() {
+		if (releaseSound && Input.GetKeyDown(KeyCode.LeftShift))
+		{
+
+			FillingreleaseAudio.volume = 100;
+			FillingreleaseAudio.Play();
+			releaseSound = false;
+		}
+		else
+		{
+			FillingreleaseAudio.volume = 0;
+			releaseSound = true;
+		}
+
+
 		if (Input.GetKey(KeyCode.LeftShift))
 		{
 			Time.timeScale -= 1f * Time.deltaTime;
@@ -83,9 +100,9 @@ public class PetSlam : MonoBehaviour
 	}
 
 	public void Slam(){
+		releaseAudio.Play();
 		explode.Play();
 		StartCoroutine(Shake(0.1f, 0.1f));
-		releaseSoundEffect.Play();
 		var colliders = Physics2D.OverlapCircleAll(transform.position, range);
 
 		if (colliders.Length > 0)
