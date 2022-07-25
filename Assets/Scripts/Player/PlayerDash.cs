@@ -21,9 +21,13 @@ public class PlayerDash : MonoBehaviour
     public bool isDashing = false;
 
     private Rigidbody2D rb;
+    private Animator animator;
+
 
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
     }
     void Update(){
         if (currentDashTime < dashDuration && currentCooldownTime == 0 &&
@@ -36,6 +40,7 @@ public class PlayerDash : MonoBehaviour
     void FixedUpdate(){
         if (isDashing){
             Dash();
+
         }
         if (currentDashTime >= dashDuration){
             currentDashTime = 0;
@@ -54,5 +59,6 @@ public class PlayerDash : MonoBehaviour
     void Dash(){
         rb.velocity = dashDirection * dashSpeed * Time.deltaTime * 10;
         currentDashTime += Time.deltaTime;
+        animator.SetTrigger("windEffect");
     }
 }
