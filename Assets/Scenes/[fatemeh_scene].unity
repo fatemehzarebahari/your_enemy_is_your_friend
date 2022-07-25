@@ -5808,7 +5808,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8599db467ad78d64ead9ae8ac3b0df58, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -6000,6 +6000,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6295667155771417153, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
       propertyPath: dashingEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftUp.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftUp.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftDown.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4813627139601917301}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4813627139601917301}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftUp.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnShiftUp
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftDown.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnShiftDown
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftUp.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PetSlam, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PetSlam, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftUp.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: -1564661130493520422, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
+      propertyPath: onShiftDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7106341030758216404, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}

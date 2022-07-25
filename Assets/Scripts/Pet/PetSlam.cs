@@ -41,27 +41,21 @@ public class PetSlam : MonoBehaviour
 
     private void Start()
     {
-		animator = GetComponent<Animator>();
-		camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-		camHolder = GameObject.FindGameObjectWithTag("CameraHolder");
-		preSize = camera.orthographicSize;
-		manaBar.value = 100;
-		manaBarFilled = true;
-	}
+			animator = GetComponent<Animator>();
+			camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+			camHolder = GameObject.FindGameObjectWithTag("CameraHolder");
+			preSize = camera.orthographicSize;
+			manaBar.value = 100;
+			manaBarFilled = true;
+		}
+
     void Update() {
 		if (releaseSound && Input.GetKeyDown(KeyCode.LeftShift))
 		{
-
 			FillingreleaseAudio.volume = 100;
 			FillingreleaseAudio.Play();
 			releaseSound = false;
 		}
-		else
-		{
-			FillingreleaseAudio.volume = 0;
-			releaseSound = true;
-		}
-
 
 		if (Input.GetKey(KeyCode.LeftShift))
 		{
@@ -81,6 +75,9 @@ public class PetSlam : MonoBehaviour
 		}
 		else
 		{
+			FillingreleaseAudio.volume = 0;
+			releaseSound = true;
+
 			textRelease.SetActive(false);
 			camera.orthographicSize = preSize;
 			Time.timeScale = 1f;
