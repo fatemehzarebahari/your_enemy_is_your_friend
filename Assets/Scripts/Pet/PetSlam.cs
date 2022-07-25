@@ -8,6 +8,9 @@ public class PetSlam : MonoBehaviour
 	[SerializeField]
 	public Transform PetPos;
 
+	[SerializeField]
+	AudioSource releaseSoundEffect;
+
 	private Vector2 Center;
 
 	[SerializeField]
@@ -82,6 +85,7 @@ public class PetSlam : MonoBehaviour
 	public void Slam(){
 		explode.Play();
 		StartCoroutine(Shake(0.1f, 0.1f));
+		releaseSoundEffect.Play();
 		var colliders = Physics2D.OverlapCircleAll(transform.position, range);
 
 		if (colliders.Length > 0)
