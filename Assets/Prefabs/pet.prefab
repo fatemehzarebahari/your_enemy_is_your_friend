@@ -433,7 +433,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.71875, y: 2.1875}
+    oldSize: {x: 3.71875, y: 3.875}
     newSize: {x: 1.0625, y: 1.4375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -455,9 +455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PetPos: {fileID: 0}
-  explosionStrength: 15
+  explosionStrength: 8
   range: 3
-  duration: 0.5
+  duration: 1
   explode: {fileID: 2440266449365821800}
   image: {fileID: 5206957509781482829}
   textRelease: {fileID: 6320796125593086714}

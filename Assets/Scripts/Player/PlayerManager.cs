@@ -7,10 +7,11 @@ public bool isAlive = true;
 private Animator animator;
 [SerializeField]
 private GameObject gameOverCanvas;
+private Collider2D col;
 
 private void Awake(){
-    animator = GetComponent<Animator>();
-
+  animator = GetComponent<Animator>();
+  col = GetComponent<Collider2D>();
 }
 
   public void OnCollisionEnter2D(Collision2D collision){
@@ -18,8 +19,8 @@ private void Awake(){
         Debug.Log("Bullets detected");
         isAlive = false;
         gameOverCanvas.SetActive(true);
-        // animator.SetTrigger("die");
         animator.SetTrigger("staydead");
+        col.enabled = false;
     }
   }
 
