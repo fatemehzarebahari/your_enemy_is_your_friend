@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerDash : MonoBehaviour
-{   
+{
+    [SerializeField] ParticleSystem whooshParticle;
+    [SerializeField] AudioSource whooshAudio;
     [SerializeField, Range(0f,250f)]
     float dashSpeed = 120f;
 
@@ -22,13 +25,19 @@ public class PlayerDash : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private GameObject camHolder;
+
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
+        camHolder = GameObject.FindGameObjectWithTag("CameraHolder");
+
     }
     void Update(){
         if (currentDashTime < dashDuration && currentCooldownTime == 0 &&
                 GetComponent<PlayerInputManager>().moveDirection != Vector2.zero && GetComponent<PlayerInputManager>().dashPressed){
             isDashing = true;
+
+            Activateeffect();
             dashDirection = GetComponent<PlayerInputManager>().moveDirection;
         }
     }
@@ -36,6 +45,10 @@ public class PlayerDash : MonoBehaviour
     void FixedUpdate(){
         if (isDashing){
             Dash();
+        }
+        else
+        {
+            DeActivateEffect();
         }
         if (currentDashTime >= dashDuration){
             currentDashTime = 0;
@@ -52,7 +65,38 @@ public class PlayerDash : MonoBehaviour
     }
 
     void Dash(){
+
         rb.velocity = dashDirection * dashSpeed * Time.deltaTime * 10;
         currentDashTime += Time.deltaTime;
+    }
+
+    void Activateeffect()
+    {
+        whooshAudio.Play();
+        whooshParticle.Play();
+        StartCoroutine(Shake(0.1f, 0.1f));
+    }
+    void DeActivateEffect()
+    {
+        whooshParticle.Stop();
+    }
+    public IEnumerator Shake(float duration, float magnitude)
+    {
+        Vector3 origin = camHolder.transform.localPosition;
+
+        float elapsed = 0.0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            camHolder.transform.localPosition = new Vector3(x, y, origin.z);
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+        camHolder.transform.localPosition = origin;
     }
 }
