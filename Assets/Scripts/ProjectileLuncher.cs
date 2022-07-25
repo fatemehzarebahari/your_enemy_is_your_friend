@@ -43,11 +43,11 @@ public class ProjectileLuncher : MonoBehaviour
 		line.SetPositions(position);
 	}
 
-	public void Shoot()
+	public void Shoot(GameObject shooter)
 	{
 		Vector2 aim = target_position - (Vector2)shoothingStartPosition.position;
 		GameObject bullet_Obj = Instantiate(bulletPrefab, shoothingStartPosition.position, new Quaternion());
-		bullet_Obj.GetComponent<bullet>().shoot(aim);
+		bullet_Obj.GetComponent<bullet>().shoot(aim, shooter);
 	}
 
 	public void StartAiming()

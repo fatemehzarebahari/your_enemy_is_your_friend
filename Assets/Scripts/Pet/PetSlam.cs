@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -115,6 +114,7 @@ public class PetSlam : MonoBehaviour
 						Rigidbody2D rb = colliders[i].GetComponent<Rigidbody2D>();
 						Vector2 ForceVec = (t.position - transform.position).normalized * explosionStrength;
 						rb.velocity = ForceVec;
+						StartCoroutine(rb.gameObject.GetComponent<EnemyManager>().Fall(duration));
 						}
 				}
 			}
