@@ -33,7 +33,7 @@ public class HostScript : MonoBehaviour
 	[SerializeField]
 	private GameObject lightning;
 	[SerializeField]
-	private AudioSource explosionSound, landingSound, deathSound;
+	private AudioSource explosionSound, landingSound;
 
 	private Animator animator;
 	private Vector3 startingPosition;
@@ -106,7 +106,6 @@ public class HostScript : MonoBehaviour
 
 	private void Spawn()
 	{
-		
 		spawnCounter++;
 		if (spawnCounter < blackList.Length + Random.Range(0,2))
 		{
@@ -132,14 +131,10 @@ public class HostScript : MonoBehaviour
 		 landingSound.Play();
 	}
 
-	private void playDeath() 
-	{
-		deathSound.Play();
-	}
+
 	private void onWin() 
 	{
 		print("YOU WON!");
-		deathSound.Play();
 	}
 
 }
