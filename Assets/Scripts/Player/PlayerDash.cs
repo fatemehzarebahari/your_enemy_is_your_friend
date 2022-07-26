@@ -24,12 +24,15 @@ public class PlayerDash : MonoBehaviour
     public bool isDashing = false;
 
     private Rigidbody2D rb;
+    private Animator animator;
+
 
     private GameObject camHolder;
 
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
         camHolder = GameObject.FindGameObjectWithTag("CameraHolder");
+        animator = GetComponent<Animator>();
 
     }
     void Update(){
@@ -45,6 +48,7 @@ public class PlayerDash : MonoBehaviour
     void FixedUpdate(){
         if (isDashing){
             Dash();
+
         }
         else
         {
@@ -68,6 +72,7 @@ public class PlayerDash : MonoBehaviour
 
         rb.velocity = dashDirection * dashSpeed * Time.deltaTime * 10;
         currentDashTime += Time.deltaTime;
+        animator.SetTrigger("windEffect");
     }
 
     void Activateeffect()
