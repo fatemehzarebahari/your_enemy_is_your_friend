@@ -7,11 +7,12 @@ using UnityEngine;
     public Transform player;
      public GameObject bat;
           public GameObject cloneBat;
-
-     float maxDist=2;
+    Vector3 position;
+     float maxDist=10;
      
  
      public void Start () {
+        StarterPosition = transform.position;
          ChangeDirection();
      }
      
@@ -45,7 +46,7 @@ using UnityEngine;
 
         if(dist > maxDist){
             Destroy(bat);
-            cloneBat.GetComponent<BatRespawn>().respawn();
+            cloneBat.GetComponent<BatRespawn>().respawn(StarterPosition);
             
         }
      }

@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 8146728137256694460}
   - component: {fileID: 7329491409428006435}
   - component: {fileID: -4102547021779966055}
-  - component: {fileID: -2370060649161920405}
   - component: {fileID: 6932907844168865998}
   m_Layer: 31
   m_Name: Bat
@@ -132,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735857b7f0b349c41918c106ad9f6518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2423667955970384381, guid: 92ed6cf905f14e1409b7e7908f3b9861, type: 3}
+  player: {fileID: 8083104384326748813, guid: 6ef4de2ddcf2f304b86154dc8e0579f4, type: 3}
   bat: {fileID: 7792507458559969596}
   cloneBat: {fileID: 7785250974817565976, guid: 3aab622c2871294438983daffaef4598, type: 3}
 --- !u!114 &-4102547021779966055
@@ -148,26 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   batPrefab: {fileID: 8146728137256694460}
---- !u!95 &-2370060649161920405
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7792507458559969596}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cbf9754b7cf55b34c8272c476102fda2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &6932907844168865998
 Rigidbody2D:
   serializedVersion: 4
