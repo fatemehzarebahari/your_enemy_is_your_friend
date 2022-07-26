@@ -11584,6 +11584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Host
       objectReference: {fileID: 0}
+    - target: {fileID: 5277481943389454846, guid: d18c6720a27cb624f92d7371a99c433d, type: 3}
+      propertyPath: m_TagString
+      value: Host
+      objectReference: {fileID: 0}
     - target: {fileID: 5277481943442785375, guid: d18c6720a27cb624f92d7371a99c433d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -14688,6 +14692,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 213188838}
+    - target: {fileID: 1736048587443032628, guid: 827faf8cd6d48d7cfbe3d8014ad48566, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 213188838}
+    - target: {fileID: 1736048587443032628, guid: 827faf8cd6d48d7cfbe3d8014ad48566, type: 3}
+      propertyPath: getPlayerAsTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1736048587443032631, guid: 827faf8cd6d48d7cfbe3d8014ad48566, type: 3}
       propertyPath: m_RootOrder
       value: 0

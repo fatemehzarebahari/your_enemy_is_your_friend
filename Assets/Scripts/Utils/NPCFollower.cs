@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class NPCFollower : MonoBehaviour
 {
 	[SerializeField]
-	public Transform player;
+	public Transform target;
 
 	[SerializeField]
 	float speed = 30f;
@@ -18,7 +18,7 @@ public class NPCFollower : MonoBehaviour
 	private bool getPlayerAsTarget;
 
 	Rigidbody2D rb;
-	bool isForwarding = true;
+	bool isForwarding = true, isEnabled = true;
 
 	Vector2 player_pos, pet_pos;
 
@@ -29,22 +29,21 @@ public class NPCFollower : MonoBehaviour
 		currentSpeed = speed;
 
 		if(getPlayerAsTarget){
-			player = GameObject.FindGameObjectWithTag("Player").transform;
+			target = GameObject.FindGameObjectWithTag("Player").transform;
+			target.gameObject.GetComponent<PlayerManager>().onDeath += disableFollower;
 		}
 	}
 
 
 	void Update()
 	{
-		if (isForwarding)
+		if (isForwarding && isEnabled)
 		{
-			pet_pos = rb.position;
-			player_pos = player.position;
-			dist = (player_pos - pet_pos).magnitude;
+			dist = (target.position - transform.position).magnitude;
 
 			if (dist > range)
 			{
-				Vector2 aim_Vector = player_pos - pet_pos;
+				Vector2 aim_Vector = target.position - transform.position;
 				rb.velocity = aim_Vector.normalized * currentSpeed;
 			}
 			else
@@ -64,6 +63,10 @@ public class NPCFollower : MonoBehaviour
 	{
 		isForwarding = false;
 		rb.velocity = Vector2.zero;
+	}
+
+	public void disableFollower(){
+		isEnabled = false;
 	}
 
 	public IEnumerator StopFollowingFor(float duration){
