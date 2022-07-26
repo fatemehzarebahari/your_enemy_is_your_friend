@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6166301514120952561}
   - component: {fileID: 4642795691343980554}
+  - component: {fileID: 2575046914531417241}
   m_Layer: 0
   m_Name: Spider Sprite Sheet_4
   m_TagString: Untagged
@@ -84,3 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2575046914531417241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569796944803649252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 735857b7f0b349c41918c106ad9f6518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 6166301514120952561}
+  bat: {fileID: 6569796944803649252}
+  cloneBat: {fileID: 7785250974817565976, guid: 3aab622c2871294438983daffaef4598, type: 3}
