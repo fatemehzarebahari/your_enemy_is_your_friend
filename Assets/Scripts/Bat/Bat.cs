@@ -5,8 +5,8 @@ using UnityEngine;
  public class Bat : MonoBehaviour {
      private float timeToChangeDirection;
     public Transform player;
-     public GameObject bat;
-          public GameObject cloneBat;
+    // public GameObject bat;
+          //public GameObject cloneBat;
 
      float maxDist=2;
      
@@ -23,7 +23,7 @@ using UnityEngine;
              ChangeDirection();
          }
  
-         GetComponent<Rigidbody2D>().velocity = transform.up * 2;
+        // GetComponent<Rigidbody2D>().velocity = transform.up * 2;
          checkLocation();
 
      }
@@ -43,10 +43,10 @@ using UnityEngine;
      private void checkLocation(){
         float dist = Vector3.Distance(player.position, transform.position);
 
-        if(dist > maxDist){
-            Destroy(bat);
-            cloneBat.GetComponent<BatRespawn>().respawn();
+      //  if(dist > maxDist){
+           // Destroy(bat);
+           // cloneBat.GetComponent<BatRespawn>().respawn();
             
-        }
+       // }
      }
  }
