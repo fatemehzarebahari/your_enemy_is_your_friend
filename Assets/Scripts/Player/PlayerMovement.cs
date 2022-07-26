@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if ((moveDirection.x != 0 || moveDirection.y != 0) && !playEvent)
         {
-            walkingSoundEffect.volume = 100;
+            walkingSoundEffect.volume = 0.05f;
             playEvent = true;
         }
         if (moveDirection.x == 0 && moveDirection.y == 0 && playEvent)
