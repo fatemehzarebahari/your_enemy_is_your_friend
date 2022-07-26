@@ -15,14 +15,16 @@ public class PlayerMovement : MonoBehaviour
     private void Awake(){
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        walkingSoundEffect.volume = 0;
-        walkingSoundEffect.Play();
     }
 
     void FixedUpdate(){
         if (GetComponent<PlayerManager>().isAlive)
             Move();
-        else rb.velocity = new Vector2(0, 0); 
+        else{
+            rb.velocity = new Vector2(0, 0); 
+            walkingSoundEffect.Stop();
+            playEvent = false;
+        } 
     }
 
     void Move() {
@@ -33,12 +35,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if ((moveDirection.x != 0 || moveDirection.y != 0) && !playEvent)
         {
-            walkingSoundEffect.volume = 100;
+            walkingSoundEffect.Play();
             playEvent = true;
         }
         if (moveDirection.x == 0 && moveDirection.y == 0 && playEvent)
         {
-            walkingSoundEffect.volume = 0;
+            walkingSoundEffect.Stop();
             playEvent = false;
         }
         if (moveDirection.x > 0) 

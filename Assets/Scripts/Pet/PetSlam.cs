@@ -72,7 +72,7 @@ public class PetSlam : MonoBehaviour
 				textRelease.SetActive(true);
 			}
 		}
-		else
+		else if (Time.timeScale != 0)
 		{
 			FillingreleaseAudio.volume = 0;
 			releaseSound = true;

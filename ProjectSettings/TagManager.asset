@@ -10,6 +10,7 @@ TagManager:
   - player
   - Bullet
   - CameraHolder
+  - Host
   layers:
   - Default
   - TransparentFX
