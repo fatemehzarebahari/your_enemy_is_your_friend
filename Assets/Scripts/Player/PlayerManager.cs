@@ -30,8 +30,16 @@ private void Awake(){
   }
 
   public void OnRestart(){
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    Time.timeScale = 1;
+        if(SceneManager.GetActiveScene().buildIndex != 1)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        else
+        SceneManager.LoadScene(1);
+
+        Time.timeScale = 1;
+  }
+  public void OnMenu()
+  {
+    SceneManager.LoadScene(0);
   }
 
   private IEnumerator stopGame(){

@@ -60,15 +60,15 @@ public class PetSlam : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.LeftShift))
 		{
-			Time.timeScale -= 1f * Time.deltaTime;
+			Time.timeScale -= 4f * Time.deltaTime;
 			Time.timeScale = Mathf.Clamp(Time.timeScale, 0.35f, 1f);
 			Time.fixedDeltaTime = Time.timeScale * .02f;
-			if (Time.timeScale < 0.5f)
+			if (Time.timeScale < 0.7f)
 				chargedUp = true;
 			camera.orthographicSize -= 4.5f * Time.deltaTime;
 			camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, preSize -1.5f, preSize);
-			image.rectTransform.localScale = new Vector3(image.rectTransform.localScale.x + 20f * Time.deltaTime, image.rectTransform.localScale.y, image.rectTransform.localScale.z);
-			if (image.rectTransform.localScale.x >= 7) 
+			image.rectTransform.localScale = new Vector3(image.rectTransform.localScale.x + 40f * Time.deltaTime, image.rectTransform.localScale.y, image.rectTransform.localScale.z);
+			if (image.rectTransform.localScale.x >= 5.5f) 
 			{
 				image.rectTransform.localScale = new Vector3(7, image.rectTransform.localScale.y, image.rectTransform.localScale.z);
 				textRelease.SetActive(true);

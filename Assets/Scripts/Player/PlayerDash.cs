@@ -79,7 +79,7 @@ public class PlayerDash : MonoBehaviour
     {
         whooshAudio.Play();
         whooshParticle.Play();
-        StartCoroutine(Shake(0.1f, 0.1f));
+        StartCoroutine(Shake(0.05f, 0.2f));
     }
     void DeActivateEffect()
     {

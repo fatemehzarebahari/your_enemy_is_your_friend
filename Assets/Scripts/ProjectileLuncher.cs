@@ -35,10 +35,16 @@ public class ProjectileLuncher : MonoBehaviour
 		}
 		else
 			line.enabled = false;
+
+		if (GetComponent<EnemyManager>().isDead) 
+		{
+			line.enabled = false;
+		}
 	}
 
 	void aim_line()
-	{
+	{ 
+		
 		Vector3[] position = new Vector3[3] { shoothingStartPosition.position, target_position, new Vector3(0, 0, 0) };
 		line.SetPositions(position);
 	}

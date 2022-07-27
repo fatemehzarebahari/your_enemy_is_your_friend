@@ -111,7 +111,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 748f72cefabab2f42bbcd62b1f4c5287, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -245,16 +245,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  minActiveEnemies: 3
-  spawnRate: 0
-  hostHealth: 100
+  minActiveEnemies: 4
+  spawnRate: 5
+  hostHealth: 2
   damgeTakenMultiplier: 5
-  attackCoolDown: 5
+  attackCoolDown: 3.3
   spawnDelay: 1
   enemies:
   - {fileID: 2115198690847950194, guid: 573c67c2272ea344593155ec6e3556a0, type: 3}
   healthbar: {fileID: 5277481943735003823}
   lightning: {fileID: 8590395441758624566, guid: 807d2830db3517544bca13224a173a11, type: 3}
+  smoke: {fileID: 7815181522461075073, guid: b67767809a18c7f489d0637f5fb6f2bd, type: 3}
   explosionSound: {fileID: 3846248533266205608}
   landingSound: {fileID: 5116357594618745776}
 --- !u!212 &5277481943389454843
@@ -768,7 +769,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 54ac8fd8c740e354793381ddea96dd1e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

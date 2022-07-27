@@ -11,6 +11,8 @@ TagManager:
   - Bullet
   - CameraHolder
   - Host
+  - Bat
+  - HostCam
   layers:
   - Default
   - TransparentFX

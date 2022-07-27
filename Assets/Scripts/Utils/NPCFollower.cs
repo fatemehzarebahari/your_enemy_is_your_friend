@@ -50,6 +50,8 @@ public class NPCFollower : MonoBehaviour
 			{
 				rb.velocity = Vector2.zero;
 			}
+
+
 		}
 	}
 

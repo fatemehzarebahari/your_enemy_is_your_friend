@@ -31,15 +31,18 @@ public class HostScript : MonoBehaviour
 
 	[Header("Effects")]
 	[SerializeField]
-	private GameObject lightning;
+	private GameObject lightning, smoke;
 	[SerializeField]
 	private AudioSource explosionSound, landingSound;
 
 	private Animator animator;
 	private Vector3 startingPosition;
 
+	GameObject hostCam;
+
 	private void Awake()
 	{
+		hostCam = GameObject.FindGameObjectWithTag("MainCamera");
 		startingPosition = transform.position;
 		animator = GetComponent<Animator>();
 
@@ -59,6 +62,7 @@ public class HostScript : MonoBehaviour
 
 	private void Update()
 	{
+
 		activeEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
 
@@ -120,7 +124,7 @@ public class HostScript : MonoBehaviour
 			GameObject enemy = Instantiate(enemies[Enemy], spawnPoints[spawnerIndex].transform.position, Quaternion.identity);
 			enemy.GetComponent<EnemyManager>().IntroduceHost(this);
 		}
-		else{
+		else if(spawnCounter < 80){
 			transform.position = startingPosition;
 		}
 	}
@@ -135,6 +139,24 @@ public class HostScript : MonoBehaviour
 	private void onWin() 
 	{
 		print("YOU WON!");
+		StartCoroutine(nextLevel());
+	}
+
+
+	IEnumerator nextLevel() 
+	{ 
+		transform.position = startingPosition;
+		spawnCounter = 100;
+		GameObject.FindGameObjectWithTag("Player").SetActive(false);
+		animator.SetTrigger("SpawnEnemy");
+	    hostCam.GetComponent<CameraFollow>().PlayerrTransform = transform;
+		hostCam.GetComponent<Camera>().orthographicSize = 1.4f;
+		yield return new WaitForSeconds(1.4f);
+		hostCam.GetComponent<CameraFollow>().enabled = false;
+		Instantiate(smoke, transform.position, Quaternion.identity);
+		transform.position = new Vector3(100, 100);
+		yield return new WaitForSeconds(1.9f);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
 }

@@ -113,7 +113,7 @@ public class EnemyManager : MonoBehaviour
 
     private void StartAttacking(){
         if (isDead) return;
-        int rand = Random.Range(1,3);
+        int rand = Random.Range(1,4);
         if (rand == 2){
             GetComponent<NPCFollower>().setSpeed(aimSpeed);
             isAiming = true;

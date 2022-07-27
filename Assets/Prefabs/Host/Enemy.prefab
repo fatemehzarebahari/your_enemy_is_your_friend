@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 1
+  speed: 1.6
   range: 0
   getPlayerAsTarget: 1
 --- !u!114 &-6277429657149095330
@@ -563,6 +563,7 @@ MonoBehaviour:
   isAiming: 0
   isLocked: 0
   isDead: 0
+  isGhost: 0
   aimDelay: 0.5
   lockDelay: 0.3
   aimSpeed: 0.1
@@ -709,7 +710,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 94ae6485863b0fb43b982d128adba58b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
